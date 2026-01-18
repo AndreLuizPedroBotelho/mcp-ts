@@ -1,7 +1,6 @@
 import axios from "axios";
 import { z } from "zod";
 
-
 const getInfoCnpj = async ({ input }: any) => {
     const { cnpj } = input;
 
@@ -17,7 +16,6 @@ const getInfoCnpj = async ({ input }: any) => {
         ],
     };
 }
-
 
 export const getInfoCnpjTool = {
     name: "getInfoCnpj",

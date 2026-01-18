@@ -1,6 +1,5 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { z } from "zod";
 import { getInfoCnpjTool } from "./tools/infoCnpj.tool.js";
 
 const server = new McpServer({
@@ -8,13 +7,11 @@ const server = new McpServer({
     version: "1.0.0",
 });
 
-
 server.registerTool(
     getInfoCnpjTool.name,
     { inputSchema: getInfoCnpjTool.inputSchema },
     getInfoCnpjTool.getInfoCnpj
 );
-
 
 // Start the server
 async function main() {
