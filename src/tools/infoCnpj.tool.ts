@@ -1,27 +1,16 @@
-import axios from "axios";
 import { z } from "zod";
+import infoCnpj from "../functions/infoCnpj.function.js";
+import { ToolInterface } from "../interface/tool.interface.js";
 
-const getInfoCnpj = async ({ input }: any) => {
-    const { cnpj } = input;
-
-    const request = await axios.get(
-        `https://minhareceita.org/${cnpj.replace(/\D/g, "")}`
-    );
-    return {
-        content: [
-            {
-                type: "text" as const, // <--- Change here
-                text: JSON.stringify(request.data),
-            },
-        ],
-    };
+export class getInfoCnpjTool {
+    static infoCnpj(): ToolInterface {
+        return {
+            title: "Cnpj informações",
+            description: "Pegar informações da receita pelo cnpj",
+            inputSchema: z.object({
+                cnpj: z.string()
+            }),
+            tool: infoCnpj
+        }
+    }
 }
-
-export const getInfoCnpjTool = {
-    name: "getInfoCnpj",
-    description: "Pegar informações da receita pelo cnpj",
-    inputSchema: z.object({
-        cnpj: z.string()
-    }),
-    getInfoCnpj
-};

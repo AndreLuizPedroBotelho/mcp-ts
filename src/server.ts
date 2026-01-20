@@ -1,23 +1,19 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { getInfoCnpjTool } from "./tools/infoCnpj.tool.js";
+import routes from "./routes/index.js";
 
 const server = new McpServer({
     name: "mcp-ts",
     version: "1.0.0",
 });
 
-server.registerTool(
-    getInfoCnpjTool.name,
-    { inputSchema: getInfoCnpjTool.inputSchema },
-    getInfoCnpjTool.getInfoCnpj
-);
+routes(server);
 
-// Start the server
 async function main() {
     const transport = new StdioServerTransport();
     await server.connect(transport);
-    console.error("Weather MCP Server running on stdio");
+    console.error("MCP Server running on stdio");
 }
 
 main().catch((error) => {
