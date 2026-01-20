@@ -1,5 +1,5 @@
-import { ToolCallback } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { ToolInterface } from "../interface/tool.interface.js";
+import { ToolCallback } from "@modelcontextprotocol/sdk/server/mcp";
+import { ToolInterface } from "../interface/tool.interface";
 
 const serializeRoute = (tool: ToolInterface): [
     { title: string; description: string; inputSchema: any },

@@ -1,6 +1,6 @@
-import { getInfoCnpjTool } from "../tools/infoCnpj.tool.js";
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import routeFunction from "../functions/route.function.js";
+import { getInfoCnpjTool } from "../tools/infoCnpj.tool";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
+import routeFunction from "../functions/route.function";
 
 export default function infoCnpjRoute(server: McpServer) {
     server.registerTool(

@@ -1,6 +1,6 @@
 import { z } from "zod";
-import infoCnpj from "../functions/infoCnpj.function.js";
-import { ToolInterface } from "../interface/tool.interface.js";
+import infoCnpj from "../functions/infoCnpj.function";
+import { ToolInterface } from "../interface/tool.interface";
 
 export class getInfoCnpjTool {
     static infoCnpj(): ToolInterface {

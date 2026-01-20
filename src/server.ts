@@ -1,7 +1,6 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { getInfoCnpjTool } from "./tools/infoCnpj.tool.js";
-import routes from "./routes/index.js";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio";
+import routes from "./routes/index";
 
 const server = new McpServer({
     name: "mcp-ts",
