@@ -15,7 +15,6 @@ server.registerTool(
     inputSchema: {
       cnpj: z
         .string()
-        .regex(/^\d{14}$|^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/)
         .describe("CNPJ number (with or without formatting: 12345678901234 or 12.345.678/0001-34)"),
     },
   },
